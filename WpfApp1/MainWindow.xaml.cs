@@ -23,6 +23,35 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+          
+            List<User> users = new List<User>();
+            User user1 = new User(){
+                Id = 1,
+                Name = "Альберт",
+                LastName = "Бибурат",
+                City = "Казань",
+                Age = 5
+            };
+            User user2 = new User()
+            {
+                Id = 2,
+                Name = "Булат",
+                LastName = "Феликсович",
+                City = "Казань",
+                Age = 18
+            };
+            User user3 = new User()
+            {
+                Id = 3,
+                Name = "Кирилл",
+                LastName = "Лососев",
+                City = "Казань",
+                Age = 49
+            };
+            users.Add(user1);
+            users.Add(user2);
+            users.Add(user3);
+            LvList.ItemsSource = users.ToList();
         }
     }
 }

@@ -14,7 +14,21 @@
         <TabControl Grid.ColumnSpan="2">
             <TabItem Header="File"></TabItem>
             <TabItem Header="Notifications"></TabItem>
-            <TabItem Header="Status"></TabItem>
+            <TabItem Header="Status">
+                <ListView x:Name="LvList" Width="785">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                            <TextBlock Text="{Binding Id}"></TextBlock>
+                            <TextBlock Text="{Binding LastName}"></TextBlock>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                            <TextBlock Text="{Binding Age}"></TextBlock>
+                            <TextBlock Text="{Binding City}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
             <TabItem Header="View" RenderTransformOrigin="38.57,41.634">
                 <StackPanel Margin=" 0 25 0 0" Height="380">
                     <ComboBox Width="150"></ComboBox>
@@ -30,7 +44,7 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Customer">
+            <TabItem Header="Customer" HorizontalAlignment="Right" Width="63">
                 <Grid Background="Black">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="59*"/>
